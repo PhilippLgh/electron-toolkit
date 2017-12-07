@@ -76,6 +76,7 @@ npm run electron-toolkit
 ## Supported Platforms
 - Windows (32/64 bit)
 - macOS
+- Linux
 
 
 <br>
