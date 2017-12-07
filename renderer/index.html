@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--title>Electron Toolkit</title-->
+
+    <link href="https://fonts.googleapis.com/css?family=Abel|Arimo|Cairo|Dosis|Exo|Lato|News+Cycle|Open+Sans|PT+Sans|Playfair+Display|Poppins|Roboto|Raleway|Source+Sans+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+
+    <style lang="">
+        html {
+            font-size: 14px;
+            height: 100%;
+        }
+        
+        html body,
+        #app {
+            height: 100%;
+        }
+        
+        body {
+            color: #333;
+            font-family: "PT Sans"
+        }
+        
+        .breadcrumb {
+            background-color: #f5f5f5 !important;
+        }
+        /* ==========================================================================
+            Lf-Container
+        ========================================================================== */
+        
+        .lf-container {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        
+        .lf-title {
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 3%;
+        }
+        /* ==========================================================================
+            Publishing-Container
+        ========================================================================== */
+        
+        .publishing-container form {
+            margin-top: 4%;
+        }
+        /* ==========================================================================
+            Lf-Tooltip
+        ========================================================================== */
+        
+        .lf-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .lf-tooltip-right .lf-tooltiptext {
+            background-color: #fafafa;
+            box-shadow: 0px 1px 2px 0px hsla(0, 0%, 80%, 1);
+            color: #848484;
+            font-size: 0.8rem;
+            float: left;
+            min-width: 200px;
+            visibility: hidden;
+            text-align: center;
+            border-radius: 3px;
+            padding: 0.3rem;
+            position: absolute;
+            top: 0.1rem;
+            left: 1rem;
+            bottom: rem;
+            z-index: 1;
+        }
+        
+        .lf-tooltip:hover .lf-tooltiptext {
+            visibility: visible;
+        }
+        /* ==========================================================================
+            ACCENT
+        ========================================================================== */
+        
+        .lf-container a {
+            color: #73b4ce
+        }
+        /* ==========================================================================
+            Table
+        ========================================================================== */
+        
+        .lf-container .table .thead-light th {
+            color: #495057;
+            background-color: #fafafa;
+            border-color: #e2e2e2;
+            border-bottom: none;
+            border-top: none;
+            font-weight: 400;
+        }
+        /* ==========================================================================
+        Buttons
+        ========================================================================== */
+        
+        .accent-button {
+            border: none;
+            border-radius: 3px !important;
+            padding: 0.5rem 1.2rem;
+            outline: none !important;
+            transition: all .2s linear;
+        }
+        
+        .accent-button i {
+            padding-right: 0.5rem;
+        }
+        
+        .accent-button:hover {
+            cursor: default;
+        }
+        
+        .b-big {
+            border-width: 2px !important;
+        }
+        
+        .b-blue {
+            color: #73b4ce;
+            background-color: white;
+            border: 1px solid #73b4ce;
+        }
+        
+        .b-blue-filled {
+            color: white;
+            background-color: #73b4ce;
+            border: 1px solid #73b4ce;
+        }
+        
+        .b-blue-filled:hover {
+            background-color: #3294ff;
+        }
+        
+        .b-blue:hover {
+            color: white;
+            background-color: #73b4ce
+        }
+        
+        .b-blue:disabled {
+            border-color: #ddd;
+            background: #ddd;
+            color: #c6c6c6;
+        }
+        
+        .b-small {
+            padding: 0.3rem 0.8rem;
+        }
+        /* ==========================================================================
+        Lightbox
+        ========================================================================== */
+        
+        .invisible {
+            visibility: hidden;
+        }
+        /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+        
+        .lightbox-target {
+            position: fixed;
+            left: 0;
+            background: rgba(0, 0, 0, .7);
+            width: 100%;
+            opacity: 0;
+            overflow: hidden;
+        }
+        
+        .lightbox-target.asset-gallery {
+            opacity: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9;
+        }
+        /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+        
+        .lightbox-target h5 {
+            color: white;
+            margin-top: 6vh;
+            margin-bottom: 3vh;
+        }
+        
+        .lightbox-target img {
+            max-height: 100%;
+            max-width: 100%;
+            padding: 2% 2%;
+        }
+        
+        .lightbox-target video {
+            max-height: 100% !important;
+            max-width: 100% !important;
+            padding: 2% 2%;
+            border: none !important;
+        }
+        /* Styles the close link, adds the slide down transition */
+        
+        a.lightbox-close {
+            position: absolute;
+            color: white !important;
+            cursor: pointer;
+            right: 0.7rem;
+            top: 0.2rem;
+            font-size: 160%
+        }
+        
+        a.lightbox-delete {
+            position: absolute;
+            color: white !important;
+            cursor: pointer;
+            left: 0.7rem;
+            top: 0.2rem;
+            font-size: 160%
+        }
+        
+        .lightbox-control-wrapper {
+            display: flex;
+            /*   align-items: center;*/
+            justify-content: center;
+        }
+        
+        .lightbox-item-title {
+            cursor: pointer;
+        }
+        
+        .lightbox-item-title:hover {
+            text-decoration: underline;
+        }
+        
+        a.lightbox-next {
+            font-size: 4rem;
+            color: white !important;
+            cursor: pointer;
+        }
+        
+        a.lightbox-prev {
+            font-size: 4rem;
+            color: white !important;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <fx-toast ref="toast"></fx-toast>
+    </div>
+    <script src="./toolkit.js"></script>
+</body>
+
+</html>
