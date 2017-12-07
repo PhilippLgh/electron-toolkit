@@ -1,6 +1,6 @@
 {
     "name": "electron-toolkit",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "description": "Tools to make launching Electron apps easier",
     "main": "./app/index.js",
     "scripts": {
