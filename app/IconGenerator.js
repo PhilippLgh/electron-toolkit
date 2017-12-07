@@ -147,7 +147,7 @@ class IconGenerator {
         return this.readFile(pngPath).then(data => {
             //var output = png2icons.PNG2ICO_PNG(data, png2icons.BEZIER, false, 0);
             // Microsoft ICO using BMP icons with bicubic interpolation. 
-            var output = png2icons.PNG2ICO_BMP(input, png2icons.BICUBIC, true);
+            var output = png2icons.PNG2ICO_BMP(data, png2icons.BICUBIC, false);
             if (!output) {
                 throw new Error("conversion to Ico failed");
             }
