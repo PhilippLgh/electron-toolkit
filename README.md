@@ -1,6 +1,6 @@
 # Electron Toolkit
 
-"Command Line Gui Tools" to make launching Electron apps easier and faster
+"Command Line Gui Tools" to make launching Electron apps easier, faster and fun
 
 - __GUI for [electron-builder](https://github.com/electron-userland/electron-builder)__ - package and build your app
 - __App Icon Generator__ - generate app icons for all platforms
@@ -75,7 +75,8 @@ npm run electron-toolkit
 
 ## Supported Platforms
 - Windows (32/64 bit)
-- OS X (also known as macOS)
+- macOS
+- Linux
 
 
 <br>
@@ -150,3 +151,4 @@ Contact me philipplgh@gmail.com.
    You are not allowed to sublicense, and/or sell the template.
 
 
+ 
