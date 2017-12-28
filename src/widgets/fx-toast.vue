@@ -31,7 +31,7 @@ export default {
 
             var timeoutId = setTimeout(()=>{
                 this.reset();
-            }, 3500);
+            }, 4500); //if time is adjusted here adjust css as well
             
         },
         onClick(e){
@@ -73,8 +73,8 @@ export default {
 
 .toast.show {
     visibility: visible; 
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
-    animation: fadein 0.5s, fadeout 0.5s 3.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
 }
 
 /* Animations to fade the toast in and out */

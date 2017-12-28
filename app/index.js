@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, nativeImage } = require('electron')
 const { webContents } = require("electron");
 const path = require('path')
 const url = require('url')
@@ -29,12 +29,12 @@ function createWindow() {
         width: 800,
         height: 600,
         title: "Electron Toolkit v" + package.version,
+        //icon: nativeImage.createFromPath(path.join(__dirname, '..', "icon.ico")),
         webPreferences: {
             //nodeIntegration: false, // => webview won't work
-            preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, "preload.js")
         }
-
-    })
+    });
 
     win.setMenu(null);
 

@@ -100,20 +100,20 @@ export default {
             })
 
        },
-
+       publishPage: function(){
+           return this.$refs.webview.getWebContents().executeJavaScript("window.electronHookPublish()")
+       },
         saveWebsiteDataToLocalStorage(data){
             store.website = data;
             store.websiteTemp = data;
             store.websiteInit = true;
             storage.setProperty("website", data);
         },
-
         setImage:function(image, newImage){
             image.url = newImage.data || image.url;
             image.path = newImage.path || image.path
             image.title = newImage.filename || image.url;
         },
-
         setPageData: function(){
 
             //preset website values here
@@ -149,7 +149,7 @@ export default {
             var data = {
                 "website": store.websiteTemp,
                 "screens": store.screenshots.filter(s => s.type == "image"),
-                "logos":store.logos
+                "logos": store.logos
             }
 
             this.$refs.webview.executeJavaScript("window.electronHookSet("+ JSON.stringify(data) +")")
@@ -185,13 +185,11 @@ export default {
         this.$refs.webview.addEventListener('crashed', (ev) => {
             this.loading = false; 
             this.failed = true;
-      
         })
 
         this.$refs.webview.addEventListener('close', (ev) => {
             this.loading = false; 
             this.failed = true;
-      
         })
     }
 }

@@ -14,6 +14,7 @@
         <div class="button-wrapper">
             <loading-button class="btn btn-secondary" fa="fa-floppy-o" @click="onSave" loading-caption="Saving..">Save</loading-button>
             <loading-button class="btn btn-secondary" fa="fa-download" @click="onExport" loading-caption="Exporting..">Export</loading-button>
+            <loading-button class="btn btn-secondary" fa="fa-cloud-upload" @click="onPublish" loading-caption="Publishing..">Publish</loading-button>
         </div>
     </sticky-footer>
 </div>
@@ -122,7 +123,18 @@ export default {
                     console.error("could not export page", err)
                 })
         },
-
+        onPublish: function(stateHandler){
+            stateHandler.start()
+            this.$refs.webview.publishPage()
+                .then(result => {
+                    stateHandler.done();
+                    app.showUserInfo(`Website was published successfully: <a href="${result.url+'?v='+(new Date().getTime())}">Open Website</a>`)
+                })
+                .catch(err => {
+                    stateHandler.error();
+                    app.showUserError("Could not publish website: internal error")                    
+                })
+        },
         removeDataUrls(data) {
             var p =  this.replaceDataUrlWithPath(data.screenshot);
             /*  this.replaceDataUrlWithPath(data.logo);*/
