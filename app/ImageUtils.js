@@ -45,7 +45,7 @@ class ImageUtils {
         //var binaryData = new Buffer(base64Data, "base64").toString("binary");
         //return binaryData;
         var pngNative = nativeImage.createFromDataURL(pngUri);
-        return pngNative.toPng();
+        return pngNative.toPng ? pngNative.toPng() : pngNative.toPNG();
     }
 
     static svg2png(svgPath) {
